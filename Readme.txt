@@ -1,3 +1,12 @@
+Thursday, 8 Aug 2013 23:39
+
+
+Changes in this repo
+-------------------
+
+This version of DotNetZip has some changes to make it better suited to development with Unity3D, especially the mobile versions
+which have restrictions on .Net version and some API limitations. Nothing is specific to Unity3D though, it is basically a more compatible version of DotNetZip.
+
 Mon, 11 Jul 2011  20:10
 
 
