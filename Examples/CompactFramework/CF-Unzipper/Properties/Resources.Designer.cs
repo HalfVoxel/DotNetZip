@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ionic.Examples.Smartphone.Zip.Properties {
+namespace Pathfinding.Ionic.Examples.Smartphone.Zip.Properties {
     using System;
 
 

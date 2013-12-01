@@ -27,7 +27,7 @@ using System;
 using System.IO;
 using System.Security.Permissions;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL3
     /// <summary>
@@ -875,7 +875,7 @@ namespace Ionic.Zip
             {
                 _s.Seek(value, System.IO.SeekOrigin.Begin);
                 // workitem 10178
-                Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(_s);
+                Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(_s);
             }
         }
 

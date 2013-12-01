@@ -29,7 +29,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     public partial class ZipFile
@@ -515,9 +515,9 @@ namespace Ionic.Zip
         ///   then gets the array of bytes from that MemoryStream.
         ///
         /// <code lang="C#">
-        /// using (var zip = new Ionic.Zip.ZipFile())
+        /// using (var zip = new Pathfinding.Ionic.Zip.ZipFile())
         /// {
-        ///     zip.CompressionLevel= Ionic.Zlib.CompressionLevel.BestCompression;
+        ///     zip.CompressionLevel= Pathfinding.Ionic.Zlib.CompressionLevel.BestCompression;
         ///     zip.Password = "VerySecret.";
         ///     zip.Encryption = EncryptionAlgorithm.WinZipAes128;
         ///     zip.AddFile(sourceFileName);
@@ -539,7 +539,7 @@ namespace Ionic.Zip
         /// <code lang="C#">
         /// using (var fs = new FileSteeam(filename, FileMode.Open))
         /// {
-        ///   using (var zip = Ionic.Zip.ZipFile.Read(inputStream))
+        ///   using (var zip = Pathfinding.Ionic.Zip.ZipFile.Read(inputStream))
         ///   {
         ///     zip.AddEntry("Name1.txt", "this is the content");
         ///     zip.Save(inputStream);  // NO NO NO!!
@@ -552,7 +552,7 @@ namespace Ionic.Zip
         /// </para>
         ///
         /// <code lang="C#">
-        /// using (var zip = Ionic.Zip.ZipFile.Read(filename))
+        /// using (var zip = Pathfinding.Ionic.Zip.ZipFile.Read(filename))
         /// {
         ///     zip.AddEntry("Name1.txt", "this is the content");
         ///     zip.Save();  // YES!

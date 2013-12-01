@@ -25,7 +25,7 @@
 // ------------------------------------------------------------------
 
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
     /// <summary>
     /// An enum that provides the various encryption algorithms supported by this

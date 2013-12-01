@@ -39,9 +39,9 @@ using System.Reflection;
 using System.IO;
 using System.Collections.Generic;
 
-using Ionic.Zip;
+using Pathfinding.Ionic.Zip;
 
-namespace Ionic.Zip.Examples
+namespace Pathfinding.Ionic.Zip.Examples
 {
 
     public class ConvertZipToSfx
@@ -64,7 +64,7 @@ namespace Ionic.Zip.Examples
                         break;
 
                     case "-cmdline":
-                        flavor = Ionic.Zip.SelfExtractorFlavor.ConsoleApplication;
+                        flavor = Pathfinding.Ionic.Zip.SelfExtractorFlavor.ConsoleApplication;
                         break;
 
                 case "-comment":
@@ -109,7 +109,7 @@ namespace Ionic.Zip.Examples
         string ZipFileToConvert = null;
         string ExtractDir = null;
         bool _gaveUsage;
-        SelfExtractorFlavor flavor = Ionic.Zip.SelfExtractorFlavor.WinFormsApplication;
+        SelfExtractorFlavor flavor = Pathfinding.Ionic.Zip.SelfExtractorFlavor.WinFormsApplication;
 
         public void Run()
         {

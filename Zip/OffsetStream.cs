@@ -29,7 +29,7 @@
 using System;
 using System.IO;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL4
     internal class OffsetStream : System.IO.Stream, System.IDisposable

@@ -1,0 +1,4 @@
+/Users/arong/programming/csharp/DotNetZip/Zlib/bin/Release/Ionic.Zlib.dll.mdb
+/Users/arong/programming/csharp/DotNetZip/Zlib/bin/Release/Ionic.Zlib.dll
+/Users/arong/programming/csharp/DotNetZip/Zlib/obj/Release/Ionic.Zlib.dll
+/Users/arong/programming/csharp/DotNetZip/Zlib/obj/Release/Ionic.Zlib.dll.mdb

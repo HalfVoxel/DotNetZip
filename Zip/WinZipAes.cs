@@ -36,7 +36,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
     /// <summary>
     ///   This is a helper class supporting WinZip AES encryption.
@@ -167,7 +167,7 @@ namespace Ionic.Zip
                 {
                     PasswordVerificationGenerated = (Int16)(GeneratedPV[0] + GeneratedPV[1] * 256);
                     if (PasswordVerificationGenerated != PasswordVerificationStored)
-                        throw new Ionic.Zip.BadPasswordException();
+                        throw new Pathfinding.Ionic.Zip.BadPasswordException();
                 }
             }
             private get
@@ -236,7 +236,7 @@ namespace Ionic.Zip
             }
 
             if (invalid)
-                throw new Ionic.Zip.BadStateException("The MAC does not match.");
+                throw new Pathfinding.Ionic.Zip.BadStateException("The MAC does not match.");
         }
 
     }

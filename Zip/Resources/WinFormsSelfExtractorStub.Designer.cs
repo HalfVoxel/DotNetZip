@@ -1,4 +1,4 @@
-﻿namespace Ionic.Zip
+﻿namespace Pathfinding.Ionic.Zip
 {
     partial class WinFormsSelfExtractorStub
     {

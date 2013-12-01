@@ -16,7 +16,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>..\Ionic.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -50,10 +50,9 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;NO_SFX;STRIPLEVEL1;STRIPLEVEL2;STRIPLEVEL3;STRIPLEVEL4;STRIPLEVEL5;STRIPLEVEL6;STRIPLEVEL7</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;NO_SFX;STRIPLEVEL1;STRIPLEVEL2;STRIPLEVEL3;STRIPLEVEL4;STRIPLEVEL5;STRIPLEVEL6;STRIPLEVEL7;NO_LINQ</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>

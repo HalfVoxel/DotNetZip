@@ -31,7 +31,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     public partial class ZipFile

@@ -1,6 +1,6 @@
 ﻿Imports System
 Imports System.IO
-Imports Ionic.Zip
+Imports Pathfinding.Ionic.Zip
 Imports System.ComponentModel
 
 Public Class Form1
@@ -95,7 +95,7 @@ Public Class Form1
                 totalEntriesToProcess = zip.Entries.Count
                 SetProgressBarMax(zip.Entries.Count)
                 AddHandler zip.ExtractProgress, New EventHandler(Of ExtractProgressEventArgs)(AddressOf Me.zip_ExtractProgress)
-                zip.ExtractAll(extractDir, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently)
+                zip.ExtractAll(extractDir, Pathfinding.Ionic.Zip.ExtractExistingFileAction.OverwriteSilently)
             End Using
         Catch ex1 As Exception
             MessageBox.Show(String.Format("There's been a problem extracting that zip file.  {0}", ex1.Message), "Error Extracting", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
@@ -137,7 +137,7 @@ Public Class Form1
             Return 
         End If
         
-        If (e.EventType = Ionic.Zip.ZipProgressEventType.Extracting_AfterExtractEntry) Then
+        If (e.EventType = Pathfinding.Ionic.Zip.ZipProgressEventType.Extracting_AfterExtractEntry) Then
             StepEntryProgress(e)
         ElseIf (e.EventType = ZipProgressEventType.Extracting_BeforeExtractAll) Then
             '' do nothing

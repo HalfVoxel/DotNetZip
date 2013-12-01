@@ -15,12 +15,12 @@
 // ------------------------------------------------------------------
 //
 
-namespace Ionic.Zip.Forms
+namespace Pathfinding.Ionic.Zip.Forms
 {
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
-    using Ionic.Zip;
+    using Pathfinding.Ionic.Zip;
     
     public partial class ZipContentsDialog : Form
     {
@@ -33,7 +33,7 @@ namespace Ionic.Zip.Forms
         private void FixTitle()
         {
             this.Text = String.Format("Contents of the zip archive (DotNetZip v{0})",
-                                      Ionic.Zip.ZipFile.LibraryVersion.ToString());
+                                      Pathfinding.Ionic.Zip.ZipFile.LibraryVersion.ToString());
         }
 
         public ZipFile ZipFile

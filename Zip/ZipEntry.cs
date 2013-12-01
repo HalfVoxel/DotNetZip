@@ -30,7 +30,7 @@ using System;
 using System.IO;
 using Interop = System.Runtime.InteropServices;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     /// <summary>
@@ -55,7 +55,7 @@ namespace Ionic.Zip
         public ZipEntry()
         {
             _CompressionMethod = (Int16)CompressionMethod.Deflate;
-            _CompressionLevel = Ionic.Zlib.CompressionLevel.Default;
+            _CompressionLevel = Pathfinding.Ionic.Zlib.CompressionLevel.Default;
             _Encryption = EncryptionAlgorithm.None;
             _Source = ZipEntrySource.None;
 #if SILVERLIGHT
@@ -216,7 +216,7 @@ namespace Ionic.Zip
                 _LastModified = (value.Kind == DateTimeKind.Unspecified)
                     ? DateTime.SpecifyKind(value, DateTimeKind.Local)
                     : value.ToLocalTime();
-                _Mtime = Ionic.Zip.SharedUtilities.AdjustTime_Reverse(_LastModified).ToUniversalTime();
+                _Mtime = Pathfinding.Ionic.Zip.SharedUtilities.AdjustTime_Reverse(_LastModified).ToUniversalTime();
                 _metadataChanged = true;
             }
         }
@@ -1394,9 +1394,9 @@ namespace Ionic.Zip
                 _CompressionMethod = (Int16)value;
 
                 if (_CompressionMethod == (Int16)Ionic.Zip.CompressionMethod.None)
-                    _CompressionLevel = Ionic.Zlib.CompressionLevel.None;
-                else if (CompressionLevel == Ionic.Zlib.CompressionLevel.None)
-                    _CompressionLevel = Ionic.Zlib.CompressionLevel.Default;
+                    _CompressionLevel = Pathfinding.Ionic.Zlib.CompressionLevel.None;
+                else if (CompressionLevel == Pathfinding.Ionic.Zlib.CompressionLevel.None)
+                    _CompressionLevel = Pathfinding.Ionic.Zlib.CompressionLevel.Default;
 
                 if (_container.ZipFile != null) _container.ZipFile.NotifyEntryChanged();
                 _restreamRequiredOnSave = true;
@@ -1446,7 +1446,7 @@ namespace Ionic.Zip
         /// </remarks>
         ///
         /// <seealso cref="CompressionMethod"/>
-        public Ionic.Zlib.CompressionLevel CompressionLevel
+        public Pathfinding.Ionic.Zlib.CompressionLevel CompressionLevel
         {
             get
             {
@@ -1458,18 +1458,18 @@ namespace Ionic.Zip
                     _CompressionMethod != (short)CompressionMethod.None)
                     return ; // no effect
 
-                if (value == Ionic.Zlib.CompressionLevel.Default &&
+                if (value == Pathfinding.Ionic.Zlib.CompressionLevel.Default &&
                     _CompressionMethod == (short)CompressionMethod.Deflate) return; // nothing to do
                 _CompressionLevel = value;
 
-                if (value == Ionic.Zlib.CompressionLevel.None &&
+                if (value == Pathfinding.Ionic.Zlib.CompressionLevel.None &&
                     _CompressionMethod == (short)CompressionMethod.None)
                     return; // nothing more to do
 
-                if (_CompressionLevel == Ionic.Zlib.CompressionLevel.None)
-                    _CompressionMethod = (short) Ionic.Zip.CompressionMethod.None;
+                if (_CompressionLevel == Pathfinding.Ionic.Zlib.CompressionLevel.None)
+                    _CompressionMethod = (short) Pathfinding.Ionic.Zip.CompressionMethod.None;
                 else
-                    _CompressionMethod = (short) Ionic.Zip.CompressionMethod.Deflate;
+                    _CompressionMethod = (short) Pathfinding.Ionic.Zip.CompressionMethod.Deflate;
 
                 if (_container.ZipFile != null) _container.ZipFile.NotifyEntryChanged();
                 _restreamRequiredOnSave = true;
@@ -2150,7 +2150,7 @@ namespace Ionic.Zip
                 }
                 else
                 {
-                    AlternateEncoding = Ionic.Zip.ZipFile.DefaultEncoding;
+                    AlternateEncoding = Pathfinding.Ionic.Zip.ZipFile.DefaultEncoding;
                     AlternateEncodingUsage = ZipOption.Never;
                 }
             }
@@ -2342,7 +2342,7 @@ namespace Ionic.Zip
         private static ZipEntry Create(string nameInArchive, ZipEntrySource source, Object arg1, Object arg2)
         {
             if (String.IsNullOrEmpty(nameInArchive))
-                throw new Ionic.Zip.ZipException("The entry name must be non-null and non-empty.");
+                throw new Pathfinding.Ionic.Zip.ZipException("The entry name must be non-null and non-empty.");
 
             ZipEntry entry = new ZipEntry();
 
@@ -2379,7 +2379,7 @@ namespace Ionic.Zip
                 String filename = (arg1 as String);   // must not be null
 
                 if (String.IsNullOrEmpty(filename))
-                    throw new Ionic.Zip.ZipException("The filename must be non-null and non-empty.");
+                    throw new Pathfinding.Ionic.Zip.ZipException("The filename must be non-null and non-empty.");
 
                 try
                 {
@@ -2390,7 +2390,7 @@ namespace Ionic.Zip
 
 #if NETCF
                     // workitem 6878
-                    // Ionic.Zip.SharedUtilities.AdjustTime_Win32ToDotNet
+                    // Pathfinding.Ionic.Zip.SharedUtilities.AdjustTime_Win32ToDotNet
                     entry._Mtime = File.GetLastWriteTime(filename).ToUniversalTime();
                     entry._Ctime = File.GetCreationTime(filename).ToUniversalTime();
                     entry._Atime = File.GetLastAccessTime(filename).ToUniversalTime();
@@ -2587,7 +2587,7 @@ namespace Ionic.Zip
                 this.ArchiveStream.Seek(this._RelativeOffsetOfLocalHeader, SeekOrigin.Begin);
 
                 // workitem 10178
-                Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
+                Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
             }
             catch (System.IO.IOException exc1)
             {
@@ -2612,7 +2612,7 @@ namespace Ionic.Zip
 
             this.ArchiveStream.Seek(filenameLength + extraFieldLength, SeekOrigin.Current);
             // workitem 10178
-            Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
+            Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
 
             this._LengthOfHeader = 30 + extraFieldLength + filenameLength +
                 GetLengthOfCryptoHeaderBytes(_Encryption_FromZipFile);
@@ -2627,7 +2627,7 @@ namespace Ionic.Zip
             // workitem 8098: ok (restore)
             this.ArchiveStream.Seek(origPosition, SeekOrigin.Begin);
             // workitem 10178
-            Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
+            Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
         }
 
 
@@ -2705,7 +2705,7 @@ namespace Ionic.Zip
         internal Int16 _BitField;
         internal Int16 _CompressionMethod;
         private Int16 _CompressionMethod_FromZipFile;
-        private Ionic.Zlib.CompressionLevel _CompressionLevel;
+        private Pathfinding.Ionic.Zlib.CompressionLevel _CompressionLevel;
         internal string _Comment;
         private bool _IsDirectory;
         private byte[] _CommentBytes;

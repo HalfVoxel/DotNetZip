@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{c2241050-f23c-420b-aa67-60e94b34c2b2}</ProjectGuid>
+    <ProjectGuid>{C2241050-F23C-420B-AA67-60E94B34C2B2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BZip2</RootNamespace>
@@ -19,7 +19,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\Ionic.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
@@ -70,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BZip2\BZip2 DLL.csproj">
-      <Project>{e2ce0d56-7af8-4404-bd0c-bc562cbd74d4}</Project>
+      <Project>{E2CE0D56-7AF8-4404-BD0C-BC562CBD74D4}</Project>
       <Name>BZip2 DLL</Name>
     </ProjectReference>
   </ItemGroup>

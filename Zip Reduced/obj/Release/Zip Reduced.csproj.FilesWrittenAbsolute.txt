@@ -1,0 +1,2 @@
+/Users/arong/programming/csharp/DotNetZip/Zip Reduced/bin/Release/Ionic.Zip.Reduced.dll
+/Users/arong/programming/csharp/DotNetZip/Zip Reduced/obj/Release/Ionic.Zip.Reduced.dll

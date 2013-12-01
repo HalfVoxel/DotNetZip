@@ -20,7 +20,7 @@
 // ------------------------------------------------------------------
 //
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
     /// <summary>
     /// An enum that specifies the source of the ZipEntry. 

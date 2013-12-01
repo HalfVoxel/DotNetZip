@@ -44,7 +44,7 @@ using System.Collections.Generic;
 using Interop = System.Runtime.InteropServices;
 
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     /// <summary>
@@ -58,7 +58,7 @@ namespace Ionic.Zip
     ///   href="http://www.pkware.com/documents/casestudies/APPNOTE.TXT">specification
     ///   for zip files described by PKWare</see>.  The compression for this
     ///   implementation is provided by a managed-code version of Zlib, included with
-    ///   DotNetZip in the classes in the Ionic.Zlib namespace.
+    ///   DotNetZip in the classes in the Pathfinding.Ionic.Zlib namespace.
     /// </para>
     ///
     /// <para>
@@ -401,7 +401,7 @@ namespace Ionic.Zip
         ///   information see <see
         ///   cref="Ionic.Zlib.CompressionStrategy">Ionic.Zlib.CompressionStrategy</see>.
         /// </remarks>
-        public Ionic.Zlib.CompressionStrategy Strategy
+        public Pathfinding.Ionic.Zlib.CompressionStrategy Strategy
         {
             get { return _Strategy; }
             set { _Strategy = value; }
@@ -472,7 +472,7 @@ namespace Ionic.Zip
         ///    alone, and accept the default.
         ///  </para>
         /// </remarks>
-        public Ionic.Zlib.CompressionLevel CompressionLevel
+        public Pathfinding.Ionic.Zlib.CompressionLevel CompressionLevel
         {
             get;
             set;
@@ -487,7 +487,7 @@ namespace Ionic.Zip
         ///   </para>
         /// </remarks>
         /// <seealso cref="Ionic.Zip.CompressionMethod" />
-        public Ionic.Zip.CompressionMethod CompressionMethod
+        public Pathfinding.Ionic.Zip.CompressionMethod CompressionMethod
         {
             get
             {
@@ -973,7 +973,7 @@ namespace Ionic.Zip
                 }
                 else
                 {
-                    _alternateEncoding = Ionic.Zip.ZipFile.DefaultEncoding;
+                    _alternateEncoding = Pathfinding.Ionic.Zip.ZipFile.DefaultEncoding;
                     _alternateEncodingUsage = ZipOption.Never;
                 }
             }
@@ -2841,7 +2841,7 @@ namespace Ionic.Zip
             _StatusMessageTextWriter = statusMessageWriter;
             _contentsChanged = true;
             AddDirectoryWillTraverseReparsePoints = true;  // workitem 8617
-            CompressionLevel = Ionic.Zlib.CompressionLevel.Default;
+            CompressionLevel = Pathfinding.Ionic.Zlib.CompressionLevel.Default;
 #if !NETCF
             ParallelDeflateThreshold = 512 * 1024;
 #endif
@@ -3617,8 +3617,8 @@ namespace Ionic.Zip
         internal string _Password;
         private bool _emitNtfsTimes = true;
         private bool _emitUnixTimes;
-        private Ionic.Zlib.CompressionStrategy _Strategy = Ionic.Zlib.CompressionStrategy.Default;
-        private Ionic.Zip.CompressionMethod _compressionMethod = Ionic.Zip.CompressionMethod.Deflate;
+        private Pathfinding.Ionic.Zlib.CompressionStrategy _Strategy = Pathfinding.Ionic.Zlib.CompressionStrategy.Default;
+        private Pathfinding.Ionic.Zip.CompressionMethod _compressionMethod = Pathfinding.Ionic.Zip.CompressionMethod.Deflate;
         private bool _fileAlreadyExists;
         private string _temporaryFileName;
         private bool _contentsChanged;
@@ -3648,7 +3648,7 @@ namespace Ionic.Zip
         private int _BufferSize = BufferSizeDefault;
 
 #if !NETCF
-        internal Ionic.Zlib.ParallelDeflateOutputStream ParallelDeflater;
+        internal Pathfinding.Ionic.Zlib.ParallelDeflateOutputStream ParallelDeflater;
         private long _ParallelDeflateThreshold;
         private int _maxBufferPairs = 16;
 #endif

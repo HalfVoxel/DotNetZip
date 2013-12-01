@@ -63,7 +63,7 @@ using System.Reflection;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 
 
@@ -330,7 +330,7 @@ namespace Ionic.Zip
         ///   The default behavvior is to Throw.
         /// </para>
         /// </remarks>
-        public Ionic.Zip.ExtractExistingFileAction ExtractExistingFile
+        public Pathfinding.Ionic.Zip.ExtractExistingFileAction ExtractExistingFile
         {
             get;
             set;
@@ -528,7 +528,7 @@ namespace Ionic.Zip
         //string _defaultExtractLocation;
         //string _postExtractCmdLine;
         //         string _SetDefaultLocationCode =
-        //         "namespace Ionic.Zip { public partial class WinFormsSelfExtractorStub { partial void _SetDefaultExtractLocation() {" +
+        //         "namespace Pathfinding.Ionic.Zip { public partial class WinFormsSelfExtractorStub { partial void _SetDefaultExtractLocation() {" +
         //         " txtExtractDirectory.Text = \"@@VALUE\"; } }}";
 
 
@@ -755,7 +755,7 @@ namespace Ionic.Zip
                 tmpDir = TempFileFolder ?? Path.GetDirectoryName(exeToGenerate);
                 stubExe = GenerateTempPathname(tmpDir, "exe");
 
-                // get the Ionic.Zip assembly
+                // get the Pathfinding.Ionic.Zip assembly
                 Assembly a1 = typeof(ZipFile).Assembly;
 
                 using (var csharp = new Microsoft.CSharp.CSharpCodeProvider
@@ -784,7 +784,7 @@ namespace Ionic.Zip
                     if (settings == null)
                         throw new BadStateException(String.Format("While saving a Self-Extracting Zip, Cannot find that flavor ({0})?", options.Flavor));
 
-                    // This is the list of referenced assemblies.  Ionic.Zip is
+                    // This is the list of referenced assemblies.  Pathfinding.Ionic.Zip is
                     // needed here.  Also if it is the winforms (gui) extractor, we
                     // need other referenced assemblies, like
                     // System.Windows.Forms.dll, etc.
@@ -839,7 +839,7 @@ namespace Ionic.Zip
 
                         if (String.IsNullOrEmpty(options.IconFile))
                         {
-                            // Use the ico file that is embedded into the Ionic.Zip
+                            // Use the ico file that is embedded into the Pathfinding.Ionic.Zip
                             // DLL itself.  To do this we must unpack the icon to
                             // the filesystem, in order to specify it on the cmdline
                             // of csc.exe.  This method will remove the unpacked
@@ -881,7 +881,7 @@ namespace Ionic.Zip
                             }
                         }
 
-                        // add the Ionic.Utils.Zip DLL as an embedded resource
+                        // add the Pathfinding.Ionic.Utils.Zip DLL as an embedded resource
                         cp.EmbeddedResources.Add(a1.Location);
 
                         // file header

@@ -30,7 +30,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     public partial class ZipFile
@@ -1410,7 +1410,7 @@ namespace Ionic.Zip
         /// DataSet ds1 = new DataSet();
         /// da.Fill(ds1, "Invoices");
         ///
-        /// using(Ionic.Zip.ZipFile zip = new Ionic.Zip.ZipFile())
+        /// using(Ionic.Zip.ZipFile zip = new Pathfinding.Ionic.Zip.ZipFile())
         /// {
         ///     zip.AddEntry(zipEntryName, (name,stream) => ds1.WriteXml(stream) );
         ///     zip.Save(zipFileName);
@@ -1430,7 +1430,7 @@ namespace Ionic.Zip
         /// <code lang="C#">
         /// using (var input = File.Open(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite ))
         /// {
-        ///     using(Ionic.Zip.ZipFile zip = new Ionic.Zip.ZipFile())
+        ///     using(Ionic.Zip.ZipFile zip = new Pathfinding.Ionic.Zip.ZipFile())
         ///     {
         ///         zip.AddEntry(zipEntryName, (name,output) =>
         ///             {
@@ -1531,7 +1531,7 @@ namespace Ionic.Zip
         ///   source stream for the content for a zip entry.
         ///
         /// <code lang="C#">
-        /// using(Ionic.Zip.ZipFile zip = new Ionic.Zip.ZipFile())
+        /// using(Ionic.Zip.ZipFile zip = new Pathfinding.Ionic.Zip.ZipFile())
         /// {
         ///     zip.AddEntry(zipEntryName,
         ///                  (name) =>  File.Open(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite ),

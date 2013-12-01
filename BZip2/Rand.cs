@@ -24,7 +24,7 @@
 // ------------------------------------------------------------------
 
 
-namespace Ionic.BZip2
+namespace Pathfinding.Ionic.BZip2
 {
     internal static class Rand
     {

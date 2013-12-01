@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Ionic.Zip.Forms
+namespace Pathfinding.Ionic.Zip.Forms
 {
     static class Program
     {

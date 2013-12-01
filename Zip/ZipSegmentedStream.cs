@@ -28,7 +28,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL2
     internal class ZipSegmentedStream : System.IO.Stream
@@ -397,7 +397,7 @@ namespace Ionic.Zip
             {
                 var x =_innerStream.Seek(offset, SeekOrigin.Begin);
                 // workitem 10178
-                Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(_innerStream);
+                Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(_innerStream);
                 return x;
             }
 
@@ -449,7 +449,7 @@ namespace Ionic.Zip
             var r =  _innerStream.Seek(offset, SeekOrigin.Begin);
 
             // workitem 10178
-            Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(_innerStream);
+            Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(_innerStream);
 
             return r;
         }
@@ -510,7 +510,7 @@ namespace Ionic.Zip
         {
             var x = _innerStream.Seek(offset, origin);
             // workitem 10178
-            Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(_innerStream);
+            Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(_innerStream);
             return x;
         }
 

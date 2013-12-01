@@ -31,7 +31,7 @@ using System.Text;
 using System.Runtime.Serialization;
 #endif
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL5
     ///// <summary>

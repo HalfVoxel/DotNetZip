@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ionic.Zip.Forms.Properties {
+namespace Pathfinding.Ionic.Zip.Forms.Properties {
     using System;
     
     

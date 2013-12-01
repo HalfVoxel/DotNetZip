@@ -28,10 +28,10 @@
 Imports System
 Imports System.Reflection
 Imports System.Windows.Forms
-Imports Ionic.Zip
+Imports Pathfinding.Ionic.Zip
 
 
-Namespace Ionic.Zip.Examples.VB
+namespace Pathfinding.Ionic.Zip.Examples.VB
 
     Friend Class QuickUnzip
         <System.Runtime.InteropServices.DllImport("kernel32.dll")> _

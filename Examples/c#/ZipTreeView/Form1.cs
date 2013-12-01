@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
-using Ionic.Zip;
+using Pathfinding.Ionic.Zip;
 
 namespace ZipTreeView
 {

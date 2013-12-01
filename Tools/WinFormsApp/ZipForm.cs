@@ -19,9 +19,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
-using Ionic.Zip;
+using Pathfinding.Ionic.Zip;
 
-namespace Ionic.Zip.Forms
+namespace Pathfinding.Ionic.Zip.Forms
 {
     public partial class ZipForm : Form
     {
@@ -416,7 +416,7 @@ namespace Ionic.Zip.Forms
                 }
                 );
 
-            string compress = (options.CompressionMethod == Ionic.Zip.CompressionMethod.Deflate)
+            string compress = (options.CompressionMethod == Pathfinding.Ionic.Zip.CompressionMethod.Deflate)
                 ? "Deflate level" + options.CompressionLevel.ToString()
                 : options.CompressionMethod.ToString();
 
@@ -810,7 +810,7 @@ namespace Ionic.Zip.Forms
 
         private void btnDirBrowse_Click(object sender, EventArgs e)
         {
-            var dlg1 = new Ionic.Utils.FolderBrowserDialogEx
+            var dlg1 = new Pathfinding.Ionic.Utils.FolderBrowserDialogEx
             {
                 Description = "Select a folder to zip up:",
                 ShowNewFolderButton = false,
@@ -1144,7 +1144,7 @@ namespace Ionic.Zip.Forms
             // Configure the "select folder" dialog box
             //_folderName = tbDirName.Text;
             //_folderName = (System.IO.Directory.Exists(_folderName)) ? _folderName : "";
-            var dlg1 = new Ionic.Utils.FolderBrowserDialogEx
+            var dlg1 = new Pathfinding.Ionic.Utils.FolderBrowserDialogEx
             {
                 Description = "Select a folder to extract to:",
                 ShowNewFolderButton = true,
@@ -1349,7 +1349,7 @@ namespace Ionic.Zip.Forms
                                 catch (Exception ex2)
                                 {
                                     // Retry here in the case of bad password.
-                                    if (ex2 as Ionic.Zip.BadPasswordException != null)
+                                    if (ex2 as Pathfinding.Ionic.Zip.BadPasswordException != null)
                                     {
                                         currentPassword = "";
                                         continue; // loop around, ask for password again
@@ -2049,7 +2049,7 @@ namespace Ionic.Zip.Forms
     public class ExtractWorkerOptions
     {
         public string ExtractLocation;
-        public Ionic.Zip.ExtractExistingFileAction ExtractExisting;
+        public Pathfinding.Ionic.Zip.ExtractExistingFileAction ExtractExisting;
         public bool OpenExplorer;
         public String Selection;
     }
@@ -2061,7 +2061,7 @@ namespace Ionic.Zip.Forms
         public bool TraverseJunctions;
         public bool RemoveFilesAfterExe;
         public string Encoding;
-        public Ionic.Zip.ZipOption EncodingUsage;
+        public Pathfinding.Ionic.Zip.ZipOption EncodingUsage;
         public string Comment;
         public string Password;
         public string ExeOnUnpack;
@@ -2069,9 +2069,9 @@ namespace Ionic.Zip.Forms
         public int ExtractExistingFile;
         public int ZipFlavor;
         public int MaxSegmentSize;
-        public Ionic.Zlib.CompressionLevel CompressionLevel;
-        public Ionic.Zip.CompressionMethod CompressionMethod;
-        public Ionic.Zip.EncryptionAlgorithm Encryption;
+        public Pathfinding.Ionic.Zlib.CompressionLevel CompressionLevel;
+        public Pathfinding.Ionic.Zip.CompressionMethod CompressionMethod;
+        public Pathfinding.Ionic.Zip.EncryptionAlgorithm Encryption;
         public Zip64Option Zip64;
         public bool WindowsTimes;
         public bool UnixTimes;

@@ -18,7 +18,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ionic.Zip.Forms
+namespace Pathfinding.Ionic.Zip.Forms
 {
     public static class Extensions
     {

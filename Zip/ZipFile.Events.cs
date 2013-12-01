@@ -27,7 +27,7 @@
 using System;
 using System.IO;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     public partial class ZipFile
@@ -1173,7 +1173,7 @@ namespace Ionic.Zip
         /// </code>
         ///
         /// <code lang="VB">
-        /// Private Sub MyZipError(ByVal sender As Object, ByVal e As Ionic.Zip.ZipErrorEventArgs)
+        /// Private Sub MyZipError(ByVal sender As Object, ByVal e As Pathfinding.Ionic.Zip.ZipErrorEventArgs)
         ///     ' At this point, the application could prompt the user for an action to take.
         ///     ' But in this case, this application will simply automatically skip the file, in case of error.
         ///     Console.WriteLine("Zip Error,  entry {0}", e.CurrentEntry.FileName)

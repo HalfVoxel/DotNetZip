@@ -62,7 +62,7 @@
 
 
 using System;
-namespace Ionic.Zlib
+namespace Pathfinding.Ionic.Zlib
 {
         
         sealed class InfTree

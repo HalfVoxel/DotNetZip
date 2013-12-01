@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     /// <summary>
@@ -134,7 +134,7 @@ namespace Ionic.Zip
     /// </para>
     /// </remarks>
     /// <seealso cref="Ionic.Zip.ZipFile.SetCompression"/>
-    public delegate Ionic.Zlib.CompressionLevel SetCompressionCallback(string localFileName, string fileNameInArchive);
+    public delegate Pathfinding.Ionic.Zlib.CompressionLevel SetCompressionCallback(string localFileName, string fileNameInArchive);
 
     /// <summary>
     ///   In an EventArgs type, indicates which sort of progress event is being

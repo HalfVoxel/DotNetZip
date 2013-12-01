@@ -22,9 +22,9 @@
 
 using System;
 using System.IO;
-using Ionic.Zlib;
+using Pathfinding.Ionic.Zlib;
 
-namespace Ionic.Zip.Examples
+namespace Pathfinding.Ionic.Zip.Examples
 {
     public class GZip
     {
@@ -33,7 +33,7 @@ namespace Ionic.Zip.Examples
             string UsageMessage =
             "GZip.exe:  compress a file using GZip, or decompress a GZip-compressed file. \n"+
             "           The original file is deleted after processing.\n" +
-            "           This tool depends on Ionic's DotNetZip library. This is version {0} \n" +
+            "           This tool depends on Pathfinding.Ionic's DotNetZip library. This is version {0} \n" +
             "            of the utility. See http://dotnetzip.codeplex.com for info.\n"+
             "  usage:\n   GZip.exe <FileToProcess> [arguments]\n" +
             "\n  arguments: \n" +
@@ -83,7 +83,7 @@ namespace Ionic.Zip.Examples
             {
                 using (var output = File.Create(outFname))
                 {
-                    using (var compressor = new Ionic.Zlib.GZipStream(output, Ionic.Zlib.CompressionMode.Compress))
+                    using (var compressor = new Pathfinding.Ionic.Zlib.GZipStream(output, Pathfinding.Ionic.Zlib.CompressionMode.Compress))
                     {
                         compressor.FileName = fname;
                         var fi = new FileInfo(fname);
@@ -109,7 +109,7 @@ namespace Ionic.Zip.Examples
 
             using (var fs = File.OpenRead(fname))
             {
-                using (var decompressor = new Ionic.Zlib.GZipStream(fs, Ionic.Zlib.CompressionMode.Decompress))
+                using (var decompressor = new Pathfinding.Ionic.Zlib.GZipStream(fs, Pathfinding.Ionic.Zlib.CompressionMode.Decompress))
                 {
                     using (var output = File.Create(outFname))
                     {

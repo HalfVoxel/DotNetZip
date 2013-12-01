@@ -89,7 +89,7 @@ using System.IO;
 
 // flymake: csc.exe /t:module BZip2InputStream.cs BZip2OutputStream.cs Rand.cs BCRC32.cs @@FILE@@
 
-namespace Ionic.BZip2
+namespace Pathfinding.Ionic.BZip2
 {
 #if STRIPLEVEL6
     internal class BZip2Compressor
@@ -100,7 +100,7 @@ namespace Ionic.BZip2
         private int last;  // index into the block of the last char processed
         private int outBlockFillThreshold;
         private CompressionState cstate;
-        private readonly Ionic.Crc.CRC32 crc = new Ionic.Crc.CRC32(true);
+        private readonly Pathfinding.Ionic.Crc.CRC32 crc = new Pathfinding.Ionic.Crc.CRC32(true);
         BitWriter bw;
         int runs;
 

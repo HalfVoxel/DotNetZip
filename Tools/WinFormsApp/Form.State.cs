@@ -19,9 +19,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
-using Ionic.Zip;
+using Pathfinding.Ionic.Zip;
 
-namespace Ionic.Zip.Forms
+namespace Pathfinding.Ionic.Zip.Forms
 {
     public partial class ZipForm
     {

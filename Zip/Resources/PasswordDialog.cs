@@ -15,7 +15,7 @@
 // ------------------------------------------------------------------
 //
 
-namespace Ionic.Zip.Forms
+namespace Pathfinding.Ionic.Zip.Forms
 {
     using System;
     using System.Collections.Generic;

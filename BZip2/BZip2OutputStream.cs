@@ -83,7 +83,7 @@ using System;
 using System.IO;
 
 
-namespace Ionic.BZip2
+namespace Pathfinding.Ionic.BZip2
 {
 #if STRIPLEVEL6
     /// <summary>
@@ -123,7 +123,7 @@ namespace Ionic.BZip2
         ///       var outFname = fname + ".bz2";
         ///       using (var output = File.Create(outFname))
         ///       {
-        ///           using (var compressor = new Ionic.BZip2.BZip2OutputStream(output))
+        ///           using (var compressor = new Pathfinding.Ionic.BZip2.BZip2OutputStream(output))
         ///           {
         ///               byte[] buffer = new byte[2048];
         ///               int n;

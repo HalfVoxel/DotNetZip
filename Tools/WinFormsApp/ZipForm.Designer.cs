@@ -1,4 +1,4 @@
-﻿namespace Ionic.Zip.Forms
+﻿namespace Pathfinding.Ionic.Zip.Forms
 {
     partial class ZipForm
     {

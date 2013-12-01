@@ -27,7 +27,7 @@
 // ------------------------------------------------------------------
 
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL7
     // include the using statements inside the namespace declaration,
@@ -39,7 +39,7 @@ namespace Ionic.Zip
     using System.IO;
     using System.Collections.Generic;
     using System.Diagnostics;
-    using Ionic.Zip;
+    using Pathfinding.Ionic.Zip;
 
     public class CommandLineSelfExtractor
     {
@@ -63,7 +63,7 @@ namespace Ionic.Zip
         int Overwrite;
 
         // Attention: it isn't possible, with the design of this class as it is
-        // now, to have a member variable of a type from the Ionic.Zip assembly.
+        // now, to have a member variable of a type from the Pathfinding.Ionic.Zip assembly.
         // The class design registers an assembly resolver, but apparently NOT in
         // time to allow the assembly to be used in private instance variables.
 

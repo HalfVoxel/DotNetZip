@@ -30,7 +30,7 @@
 using System;
 using System.IO;
 
-namespace Ionic.Zlib
+namespace Pathfinding.Ionic.Zlib
 {
 #if STRIPLEVEL6
     /// <summary>
@@ -299,7 +299,7 @@ namespace Ionic.Zlib
         ///     int n= 1;
         ///     using (System.IO.Stream input = System.IO.File.OpenRead(filename))
         ///     {
-        ///         using (Stream decompressor= new Ionic.Zlib.GZipStream(input, CompressionMode.Decompress, true))
+        ///         using (Stream decompressor= new Pathfinding.Ionic.Zlib.GZipStream(input, CompressionMode.Decompress, true))
         ///         {
         ///             using (var output = System.IO.File.Create(DecompressedFile))
         ///             {
@@ -326,7 +326,7 @@ namespace Ionic.Zlib
         ///     Dim working(WORKING_BUFFER_SIZE) as Byte
         ///     Dim n As Integer = 1
         ///     Using input As Stream = File.OpenRead(filename)
-        ///         Using decompressor As Stream = new Ionic.Zlib.GZipStream(input, CompressionMode.Decompress, True)
+        ///         Using decompressor As Stream = new Pathfinding.Ionic.Zlib.GZipStream(input, CompressionMode.Decompress, True)
         ///             Using output As Stream = File.Create(UncompressedFile)
         ///                 Do
         ///                     n= decompressor.Read(working, 0, working.Length)
@@ -729,9 +729,9 @@ namespace Ionic.Zlib
         {
             get
             {
-                if (this._baseStream._streamMode == Ionic.Zlib.ZlibBaseStream.StreamMode.Writer)
+                if (this._baseStream._streamMode == Pathfinding.Ionic.Zlib.ZlibBaseStream.StreamMode.Writer)
                     return this._baseStream._z.TotalBytesOut + _headerByteCount;
-                if (this._baseStream._streamMode == Ionic.Zlib.ZlibBaseStream.StreamMode.Reader)
+                if (this._baseStream._streamMode == Pathfinding.Ionic.Zlib.ZlibBaseStream.StreamMode.Reader)
                     return this._baseStream._z.TotalBytesIn + this._baseStream._gzipHeaderByteCount;
                 return 0;
             }
@@ -752,7 +752,7 @@ namespace Ionic.Zlib
         /// byte[] working = new byte[WORKING_BUFFER_SIZE];
         /// using (System.IO.Stream input = System.IO.File.OpenRead(_CompressedFile))
         /// {
-        ///     using (Stream decompressor= new Ionic.Zlib.GZipStream(input, CompressionMode.Decompress, true))
+        ///     using (Stream decompressor= new Pathfinding.Ionic.Zlib.GZipStream(input, CompressionMode.Decompress, true))
         ///     {
         ///         using (var output = System.IO.File.Create(_DecompressedFile))
         ///         {
@@ -834,7 +834,7 @@ namespace Ionic.Zlib
         public override void Write(byte[] buffer, int offset, int count)
         {
             if (_disposed) throw new ObjectDisposedException("GZipStream");
-            if (_baseStream._streamMode == Ionic.Zlib.ZlibBaseStream.StreamMode.Undefined)
+            if (_baseStream._streamMode == Pathfinding.Ionic.Zlib.ZlibBaseStream.StreamMode.Undefined)
             {
                 //Console.WriteLine("GZipStream: First write");
                 if (_baseStream._wantCompress)

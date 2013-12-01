@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using Ionic.Zip;
+using Pathfinding.Ionic.Zip;
 
 namespace SmartDeviceProject3
 {
@@ -218,7 +218,7 @@ namespace SmartDeviceProject3
                 System.IO.Path.GetFileNameWithoutExtension(_selectedpath));
             try
             {
-                using (var zip1 = Ionic.Zip.ZipFile.Read(_selectedpath))
+                using (var zip1 = Pathfinding.Ionic.Zip.ZipFile.Read(_selectedpath))
                 {
                     foreach (var entry in zip1)
                     {

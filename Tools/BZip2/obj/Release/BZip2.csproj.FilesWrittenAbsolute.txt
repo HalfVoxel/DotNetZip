@@ -1,0 +1,6 @@
+/Users/arong/programming/csharp/DotNetZip/Tools/BZip2/bin/Release/Ionic.BZip2.dll
+/Users/arong/programming/csharp/DotNetZip/Tools/BZip2/bin/Release/Ionic.BZip2.dll.mdb
+/Users/arong/programming/csharp/DotNetZip/Tools/BZip2/bin/Release/BZip2.exe.mdb
+/Users/arong/programming/csharp/DotNetZip/Tools/BZip2/bin/Release/BZip2.exe
+/Users/arong/programming/csharp/DotNetZip/Tools/BZip2/obj/Release/BZip2.exe
+/Users/arong/programming/csharp/DotNetZip/Tools/BZip2/obj/Release/BZip2.exe.mdb

@@ -26,7 +26,7 @@
 //
 // ------------------------------------------------------------------
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
     // The using statements must be inside the namespace scope, because when the SFX is being
     // generated, this module gets concatenated with other source code and then compiled.
@@ -38,8 +38,8 @@ namespace Ionic.Zip
     using System.Windows.Forms;
     using System.Diagnostics;
     using System.Threading;   // ThreadPool, WaitCallback
-    using Ionic.Zip;
-    using Ionic.Zip.Forms;
+    using Pathfinding.Ionic.Zip;
+    using Pathfinding.Ionic.Zip.Forms;
 
     public partial class WinFormsSelfExtractorStub : Form
     {
@@ -189,7 +189,7 @@ namespace Ionic.Zip
             if (foo.StartsWith("@@") && foo.EndsWith("SFX_EXE_WINDOW_TITLE"))
             {
                 this.Text = String.Format("DotNetZip v{0} Self-extractor (www.codeplex.com/DotNetZip)",
-                                      Ionic.Zip.ZipFile.LibraryVersion.ToString());
+                                      Pathfinding.Ionic.Zip.ZipFile.LibraryVersion.ToString());
             }
             else this.Text = foo;
         }
@@ -264,7 +264,7 @@ namespace Ionic.Zip
 
         static WinFormsSelfExtractorStub()
         {
-            // This is important to resolve the Ionic.Zip.dll inside the extractor.
+            // This is important to resolve the Pathfinding.Ionic.Zip.dll inside the extractor.
             AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(Resolver);
         }
 
@@ -367,7 +367,7 @@ namespace Ionic.Zip
 
         private void btnDirBrowse_Click(object sender, EventArgs e)
         {
-            Ionic.Utils.FolderBrowserDialogEx dlg1 = new Ionic.Utils.FolderBrowserDialogEx();
+            Pathfinding.Ionic.Utils.FolderBrowserDialogEx dlg1 = new Pathfinding.Ionic.Utils.FolderBrowserDialogEx();
             dlg1.Description = "Select a folder for the extracted files:";
             dlg1.ShowNewFolderButton = true;
             dlg1.ShowEditBox = true;
@@ -516,7 +516,7 @@ namespace Ionic.Zip
                             catch (Exception ex2)
                             {
                                 // Retry here in the case of bad password.
-                                if (ex2 as Ionic.Zip.BadPasswordException != null)
+                                if (ex2 as Pathfinding.Ionic.Zip.BadPasswordException != null)
                                 {
                                     currentPassword = "";
                                     continue; // loop around, ask for password again

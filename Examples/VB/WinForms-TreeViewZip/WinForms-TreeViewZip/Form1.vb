@@ -1,4 +1,4 @@
-﻿Imports Ionic.Zip
+﻿Imports Pathfinding.Ionic.Zip
 Imports System.Linq
 Imports System.IO
 
@@ -13,7 +13,7 @@ Public Class Form1
         PopulateTreeView()
     End Sub
 
-    Private zip As Ionic.Zip.ZipFile
+    Private zip As Pathfinding.Ionic.Zip.ZipFile
 
     ''' <summary>
     ''' Populates TreeView1 with the entries in the zipfile, named by TextBox1

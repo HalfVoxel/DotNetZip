@@ -27,7 +27,7 @@
 
 using System;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     /// <summary>
@@ -337,7 +337,7 @@ namespace Ionic.Zip
 
         // private fields for the crypto stuff:
         private UInt32[] _Keys = { 0x12345678, 0x23456789, 0x34567890 };
-        private Ionic.Crc.CRC32 crc32 = new Ionic.Crc.CRC32();
+        private Pathfinding.Ionic.Crc.CRC32 crc32 = new Pathfinding.Ionic.Crc.CRC32();
 
     }
 

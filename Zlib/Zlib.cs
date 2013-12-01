@@ -91,7 +91,7 @@
 using System;
 using Interop=System.Runtime.InteropServices;
 
-namespace Ionic.Zlib
+namespace Pathfinding.Ionic.Zlib
 {
 
     /// <summary>

@@ -30,7 +30,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     partial class ZipEntry
@@ -97,7 +97,7 @@ namespace Ionic.Zip
                     .Append(string.Format("         Bit Field: 0x{0:X4}\n", this._BitField))
                     .Append(string.Format("        Encrypted?: {0}\n", this._sourceIsEncrypted))
                     .Append(string.Format("          Timeblob: 0x{0:X8}\n", this._TimeBlob))
-                        .Append(string.Format("              Time: {0}\n", Ionic.Zip.SharedUtilities.PackedToDateTime(this._TimeBlob)));
+                        .Append(string.Format("              Time: {0}\n", Pathfinding.Ionic.Zip.SharedUtilities.PackedToDateTime(this._TimeBlob)));
 
                 builder.Append(string.Format("         Is Zip64?: {0}\n", this._InputUsesZip64));
                 if (!string.IsNullOrEmpty(this._Comment))
@@ -191,13 +191,13 @@ namespace Ionic.Zip
                 ? zf.AlternateEncoding
                 : ZipFile.DefaultEncoding;
 
-            int signature = Ionic.Zip.SharedUtilities.ReadSignature(s);
+            int signature = Pathfinding.Ionic.Zip.SharedUtilities.ReadSignature(s);
             // return null if this is not a local file header signature
             if (IsNotValidZipDirEntrySig(signature))
             {
                 s.Seek(-4, System.IO.SeekOrigin.Current);
                 // workitem 10178
-                Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(s);
+                Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(s);
 
                 // Getting "not a ZipDirEntry signature" here is not always wrong or an
                 // error.  This can happen when walking through a zipfile.  After the
@@ -232,7 +232,7 @@ namespace Ionic.Zip
                 zde._BitField = (short)(block[i++] + block[i++] * 256);
                 zde._CompressionMethod = (Int16)(block[i++] + block[i++] * 256);
                 zde._TimeBlob = block[i++] + block[i++] * 256 + block[i++] * 256 * 256 + block[i++] * 256 * 256 * 256;
-                zde._LastModified = Ionic.Zip.SharedUtilities.PackedToDateTime(zde._TimeBlob);
+                zde._LastModified = Pathfinding.Ionic.Zip.SharedUtilities.PackedToDateTime(zde._TimeBlob);
                 zde._timestamp |= ZipEntryTimestamp.DOS;
 
                 zde._Crc32 = block[i++] + block[i++] * 256 + block[i++] * 256 * 256 + block[i++] * 256 * 256 * 256;
@@ -262,11 +262,11 @@ namespace Ionic.Zip
             if ((zde._BitField & 0x0800) == 0x0800)
             {
                 // UTF-8 is in use
-                zde._FileNameInArchive = Ionic.Zip.SharedUtilities.Utf8StringFromBuffer(block);
+                zde._FileNameInArchive = Pathfinding.Ionic.Zip.SharedUtilities.Utf8StringFromBuffer(block);
             }
             else
             {
-                zde._FileNameInArchive = Ionic.Zip.SharedUtilities.StringFromBuffer(block, expectedEncoding);
+                zde._FileNameInArchive = Pathfinding.Ionic.Zip.SharedUtilities.StringFromBuffer(block, expectedEncoding);
             }
 
             // workitem 10330
@@ -344,11 +344,11 @@ namespace Ionic.Zip
                 if ((zde._BitField & 0x0800) == 0x0800)
                 {
                     // UTF-8 is in use
-                    zde._Comment = Ionic.Zip.SharedUtilities.Utf8StringFromBuffer(block);
+                    zde._Comment = Pathfinding.Ionic.Zip.SharedUtilities.Utf8StringFromBuffer(block);
                 }
                 else
                 {
-                    zde._Comment = Ionic.Zip.SharedUtilities.StringFromBuffer(block, expectedEncoding);
+                    zde._Comment = Pathfinding.Ionic.Zip.SharedUtilities.StringFromBuffer(block, expectedEncoding);
                 }
             }
             //zde._LengthOfDirEntry = bytesRead;

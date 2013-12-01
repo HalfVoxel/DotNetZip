@@ -36,7 +36,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     partial class ZipFile
@@ -662,7 +662,7 @@ namespace Ionic.Zip
             while (directoryOnDisk.EndsWith("\\")) directoryOnDisk = directoryOnDisk.Substring(0, directoryOnDisk.Length - 1);
             if (Verbose) StatusMessageTextWriter.WriteLine("adding selection '{0}' from dir '{1}'...",
                                                                selectionCriteria, directoryOnDisk);
-            Ionic.FileSelector ff = new Ionic.FileSelector(selectionCriteria,
+            Pathfinding.Ionic.FileSelector ff = new Pathfinding.Ionic.FileSelector(selectionCriteria,
                                                            AddDirectoryWillTraverseReparsePoints);
             var itemsToAdd = ff.SelectFiles(directoryOnDisk, recurseDirectories);
 
@@ -798,7 +798,7 @@ namespace Ionic.Zip
         /// <returns>a collection of ZipEntry objects that conform to the inclusion spec</returns>
         public ICollection<ZipEntry> SelectEntries(String selectionCriteria)
         {
-            Ionic.FileSelector ff = new Ionic.FileSelector(selectionCriteria,
+            Pathfinding.Ionic.FileSelector ff = new Pathfinding.Ionic.FileSelector(selectionCriteria,
                                                            AddDirectoryWillTraverseReparsePoints);
             return ff.SelectEntries(this);
         }
@@ -871,7 +871,7 @@ namespace Ionic.Zip
         /// <returns>a collection of ZipEntry objects that conform to the inclusion spec</returns>
         public ICollection<ZipEntry> SelectEntries(String selectionCriteria, string directoryPathInArchive)
         {
-            Ionic.FileSelector ff = new Ionic.FileSelector(selectionCriteria,
+            Pathfinding.Ionic.FileSelector ff = new Pathfinding.Ionic.FileSelector(selectionCriteria,
                                                            AddDirectoryWillTraverseReparsePoints);
             return ff.SelectEntries(this, directoryPathInArchive);
         }
@@ -1243,7 +1243,7 @@ namespace Ionic.Zip
 
 
 
-namespace Ionic
+namespace Pathfinding.Ionic
 {
     internal abstract partial class SelectionCriterion
     {

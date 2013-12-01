@@ -29,7 +29,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     public partial class ZipFile
@@ -55,7 +55,7 @@ namespace Ionic.Zip
         ///   be extracted, the existing file will not be overwritten and an
         ///   exception will be thrown. To change this, set the property, or use the
         ///   <see cref="ZipFile.ExtractAll(string,
-        ///   Ionic.Zip.ExtractExistingFileAction)" /> overload that allows you to
+        ///   Pathfinding.Ionic.Zip.ExtractExistingFileAction)" /> overload that allows you to
         ///   specify an ExtractExistingFileAction parameter.
         /// </para>
         ///

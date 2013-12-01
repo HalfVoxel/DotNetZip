@@ -27,7 +27,7 @@
 
 using System;
 
-namespace Ionic.Zlib
+namespace Pathfinding.Ionic.Zlib
 {
 #if STRIPLEVEL6
     /// <summary>
@@ -521,9 +521,9 @@ namespace Ionic.Zlib
         {
             get
             {
-                if (this._baseStream._streamMode == Ionic.Zlib.ZlibBaseStream.StreamMode.Writer)
+                if (this._baseStream._streamMode == Pathfinding.Ionic.Zlib.ZlibBaseStream.StreamMode.Writer)
                     return this._baseStream._z.TotalBytesOut;
-                if (this._baseStream._streamMode == Ionic.Zlib.ZlibBaseStream.StreamMode.Reader)
+                if (this._baseStream._streamMode == Pathfinding.Ionic.Zlib.ZlibBaseStream.StreamMode.Reader)
                     return this._baseStream._z.TotalBytesIn;
                 return 0;
             }

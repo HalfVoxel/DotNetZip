@@ -22,9 +22,9 @@
 
 using System;
 using System.IO;
-using Ionic.BZip2;
+using Pathfinding.Ionic.BZip2;
 
-namespace Ionic.Zip.Examples
+namespace Pathfinding.Ionic.Zip.Examples
 {
     public class BZip2
     {
@@ -33,7 +33,7 @@ namespace Ionic.Zip.Examples
             string UsageMessage =
             "BZip2.exe:  compress a file using BZip2, or decompress a BZip2-compressed file. \n"+
             "            The original file is deleted after processing.\n" +
-            "            This tool depends on Ionic's DotNetZip library. This is version {0} \n" +
+            "            This tool depends on Pathfinding.Ionic's DotNetZip library. This is version {0} \n" +
             "            of the utility. See http://dotnetzip.codeplex.com for info.\n"+
             "  usage:\n   BZip2.exe <FileToProcess> [arguments]\n" +
             "\n  arguments: \n" +
@@ -78,11 +78,12 @@ namespace Ionic.Zip.Examples
                     return null;
             }
 
+			#if STRIPLEVLE6
             using (Stream fs = File.OpenRead(fname),
                    output = File.Create(outFname),
-                   compressor = new Ionic.BZip2.ParallelBZip2OutputStream(output))
+                   compressor = new Pathfinding.Ionic.BZip2.ParallelBZip2OutputStream(output))
                 Pump(fs, compressor);
-
+			#endif
             return outFname;
         }
 
@@ -98,11 +99,12 @@ namespace Ionic.Zip.Examples
                     return null;
             }
 
+			#if STRIPLEVLE6
             using (Stream fs = File.OpenRead(fname),
                    output = File.Create(outFname),
-                   decompressor = new Ionic.BZip2.BZip2InputStream(fs))
+                   decompressor = new Pathfinding.Ionic.BZip2.BZip2InputStream(fs))
                 Pump(decompressor, output);
-
+			#endif
             return outFname;
         }
 

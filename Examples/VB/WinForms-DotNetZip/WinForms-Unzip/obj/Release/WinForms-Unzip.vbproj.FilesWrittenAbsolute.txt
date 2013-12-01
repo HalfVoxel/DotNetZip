@@ -1,0 +1,3 @@
+/Users/arong/programming/csharp/DotNetZip/Examples/VB/WinForms-DotNetZip/WinForms-Unzip/obj/Release/WinForms_Unzip.Form1.resources
+/Users/arong/programming/csharp/DotNetZip/Examples/VB/WinForms-DotNetZip/WinForms-Unzip/obj/Release/WinForms_Unzip.Resources.resources
+/Users/arong/programming/csharp/DotNetZip/Examples/VB/WinForms-DotNetZip/WinForms-Unzip/bin/Release/Ionic.Zip.dll

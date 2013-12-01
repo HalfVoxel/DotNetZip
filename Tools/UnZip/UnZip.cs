@@ -22,9 +22,9 @@
 
 using System;
 using System.Collections.Generic;
-using Ionic.Zip;
+using Pathfinding.Ionic.Zip;
 
-namespace Ionic.Zip.Examples
+namespace Pathfinding.Ionic.Zip.Examples
 {
     public class UnZip
     {
@@ -32,7 +32,7 @@ namespace Ionic.Zip.Examples
         private static void Usage()
         {
             Console.WriteLine("UnZip.exe:  extract or list or test the entries in a zip file.");
-            Console.WriteLine("            Depends on Ionic's DotNetZip library. This is version {0} of the utility.",
+            Console.WriteLine("            Depends on Pathfinding.Ionic's DotNetZip library. This is version {0} of the utility.",
                   System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
             Console.WriteLine("usage:\n" +
                   "  unzip [options] <zipfile> [<entryname>...]  \n" +

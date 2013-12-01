@@ -19,9 +19,9 @@
 //
 
 using System;
-using Ionic.Zip;
+using Pathfinding.Ionic.Zip;
 
-namespace Ionic.Zip.Examples
+namespace Pathfinding.Ionic.Zip.Examples
 {
 
     public class ZipDir

@@ -27,7 +27,7 @@
 using System;
 using System.IO;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     public partial class ZipEntry
@@ -521,7 +521,7 @@ namespace Ionic.Zip
         /// <code lang="VB">
         ///   Using zip As New ZipFile(ZipFileToRead)
         ///       Dim e1 As ZipEntry = zip.Item("Elevation.mp3")
-        ///       Using s As Ionic.Zlib.CrcCalculatorStream = e1.OpenReader
+        ///       Using s As Pathfinding.Ionic.Zlib.CrcCalculatorStream = e1.OpenReader
         ///           Dim n As Integer
         ///           Dim buffer As Byte() = New Byte(4096) {}
         ///           Dim totalBytesRead As Integer = 0
@@ -541,7 +541,7 @@ namespace Ionic.Zip
         /// </example>
         /// <seealso cref="Ionic.Zip.ZipEntry.Extract(System.IO.Stream)"/>
         /// <returns>The Stream for reading.</returns>
-        public Ionic.Crc.CrcCalculatorStream OpenReader()
+        public Pathfinding.Ionic.Crc.CrcCalculatorStream OpenReader()
         {
             // workitem 10923
             if (_container.ZipFile == null)
@@ -567,7 +567,7 @@ namespace Ionic.Zip
         ///
         /// <param name="password">The password to use for decrypting the entry.</param>
         /// <returns>The Stream for reading.</returns>
-        public Ionic.Crc.CrcCalculatorStream OpenReader(string password)
+        public Pathfinding.Ionic.Crc.CrcCalculatorStream OpenReader(string password)
         {
             // workitem 10923
             if (_container.ZipFile == null)
@@ -578,7 +578,7 @@ namespace Ionic.Zip
 
 
 
-        internal Ionic.Crc.CrcCalculatorStream InternalOpenReader(string password)
+        internal Pathfinding.Ionic.Crc.CrcCalculatorStream InternalOpenReader(string password)
         {
             ValidateCompression();
             ValidateEncryption();
@@ -600,12 +600,12 @@ namespace Ionic.Zip
 
             this.ArchiveStream.Seek(this.FileDataPosition, SeekOrigin.Begin);
             // workitem 10178
-            Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
+            Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
 
             _inputDecryptorStream = GetExtractDecryptor(input);
             Stream input3 = GetExtractDecompressor(_inputDecryptorStream);
 
-            return new Ionic.Crc.CrcCalculatorStream(input3, LeftToRead);
+            return new Pathfinding.Ionic.Crc.CrcCalculatorStream(input3, LeftToRead);
         }
 
 
@@ -915,7 +915,7 @@ namespace Ionic.Zip
                 if (input is WinZipAesCipherStream)
                     wzs = input as WinZipAesCipherStream;
 
-                else if (input is Ionic.Zlib.CrcCalculatorStream)
+                else if (input is Pathfinding.Ionic.Zlib.CrcCalculatorStream)
                 {
                     xxx;
                 }
@@ -1027,7 +1027,7 @@ namespace Ionic.Zip
                 // change for workitem 8098
                 input.Seek(this.FileDataPosition, SeekOrigin.Begin);
                 // workitem 10178
-                Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(input);
+                Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(input);
 
                 byte[] bytes = new byte[BufferSize];
 
@@ -1048,7 +1048,7 @@ namespace Ionic.Zip
 
                 Int64 bytesWritten = 0;
                 // As we read, we maybe decrypt, and then we maybe decompress. Then we write.
-                using (var s1 = new Ionic.Crc.CrcCalculatorStream(input3))
+                using (var s1 = new Pathfinding.Ionic.Crc.CrcCalculatorStream(input3))
                 {
                     while (LeftToRead > 0)
                     {
@@ -1106,10 +1106,10 @@ namespace Ionic.Zip
                 case (short)CompressionMethod.None:
                     return input2;
                 case (short)CompressionMethod.Deflate:
-                    return new Ionic.Zlib.DeflateStream(input2, Ionic.Zlib.CompressionMode.Decompress, true);
+                    return new Pathfinding.Ionic.Zlib.DeflateStream(input2, Pathfinding.Ionic.Zlib.CompressionMode.Decompress, true);
 #if BZIP
                 case (short)CompressionMethod.BZip2:
-                    return new Ionic.BZip2.BZip2InputStream(input2, true);
+                    return new Pathfinding.Ionic.BZip2.BZip2InputStream(input2, true);
 #endif
             }
 
@@ -1190,7 +1190,7 @@ namespace Ionic.Zip
                 else
                 {
                     // workitem 6191
-                    DateTime AdjustedLastModified = Ionic.Zip.SharedUtilities.AdjustTime_Reverse(LastModified);
+                    DateTime AdjustedLastModified = Pathfinding.Ionic.Zip.SharedUtilities.AdjustTime_Reverse(LastModified);
 
 #if NETCF
                     int rc = NetCfFile.SetLastWriteTime(fileOrDirectory, AdjustedLastModified);
@@ -1358,7 +1358,7 @@ namespace Ionic.Zip
 
                 this.ArchiveStream.Seek(this.FileDataPosition - 12, SeekOrigin.Begin);
                 // workitem 10178
-                Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
+                Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
                 _zipCrypto_forExtract = ZipCrypto.ForRead(password, this);
             }
 
@@ -1380,7 +1380,7 @@ namespace Ionic.Zip
                     int sizeOfSaltAndPv = GetLengthOfCryptoHeaderBytes(_Encryption_FromZipFile);
                     this.ArchiveStream.Seek(this.FileDataPosition - sizeOfSaltAndPv, SeekOrigin.Begin);
                     // workitem 10178
-                    Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
+                    Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(this.ArchiveStream);
                     int keystrength = GetKeyStrengthInBits(_Encryption_FromZipFile);
                     _aesCrypto_forExtract = WinZipAesCrypto.ReadFromStream(password, keystrength, this.ArchiveStream);
                 }

@@ -21,7 +21,7 @@
 // ------------------------------------------------------------------
 //
 // This module defines the ZipOutputStream class, which is a stream metaphor for
-// generating zip files.  This class does not depend on Ionic.Zip.ZipFile, but rather
+// generating zip files.  This class does not depend on Pathfinding.Ionic.Zip.ZipFile, but rather
 // stands alongside it as an alternative "container" for ZipEntry.  It replicates a
 // subset of the properties, including these:
 //
@@ -46,9 +46,9 @@ using System;
 using System.Threading;
 using System.Collections.Generic;
 using System.IO;
-using Ionic.Zip;
+using Pathfinding.Ionic.Zip;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     /// <summary>
@@ -61,7 +61,7 @@ namespace Ionic.Zip
     ///   href="http://www.pkware.com/documents/casestudies/APPNOTE.TXT">specification
     ///   for zip files described by PKWare</see>.  The compression for this
     ///   implementation is provided by a managed-code version of Zlib, included with
-    ///   DotNetZip in the classes in the Ionic.Zlib namespace.
+    ///   DotNetZip in the classes in the Pathfinding.Ionic.Zlib namespace.
     /// </para>
     ///
     /// <para>
@@ -346,13 +346,13 @@ namespace Ionic.Zip
         {
             // workitem 9307
             _outputStream = stream.CanRead ? stream : new CountingStream(stream);
-            CompressionLevel = Ionic.Zlib.CompressionLevel.Default;
-            CompressionMethod = Ionic.Zip.CompressionMethod.Deflate;
+            CompressionLevel = Pathfinding.Ionic.Zlib.CompressionLevel.Default;
+            CompressionMethod = Pathfinding.Ionic.Zip.CompressionMethod.Deflate;
             _encryption = EncryptionAlgorithm.None;
             _entriesWritten = new Dictionary<String, ZipEntry>(StringComparer.Ordinal);
             _zip64 = Zip64Option.Never;
             _leaveUnderlyingStreamOpen = leaveOpen;
-            Strategy = Ionic.Zlib.CompressionStrategy.Default;
+            Strategy = Pathfinding.Ionic.Zlib.CompressionStrategy.Default;
             _name = name ?? "(stream)";
 #if !NETCF
             ParallelDeflateThreshold = -1L;
@@ -517,7 +517,7 @@ namespace Ionic.Zip
         ///   of the compresssion.  For more information see <see
         ///   cref="Ionic.Zlib.CompressionStrategy "/>.
         /// </remarks>
-        public Ionic.Zlib.CompressionStrategy Strategy
+        public Pathfinding.Ionic.Zlib.CompressionStrategy Strategy
         {
             get;
             set;
@@ -581,7 +581,7 @@ namespace Ionic.Zip
         ///    alone, and accept the default.
         ///  </para>
         /// </remarks>
-        public Ionic.Zlib.CompressionLevel CompressionLevel
+        public Pathfinding.Ionic.Zlib.CompressionLevel CompressionLevel
         {
             get;
             set;
@@ -590,7 +590,7 @@ namespace Ionic.Zip
         /// <summary>
         ///   The compression method used on each entry added to the ZipOutputStream.
         /// </summary>
-        public Ionic.Zip.CompressionMethod CompressionMethod
+        public Pathfinding.Ionic.Zip.CompressionMethod CompressionMethod
         {
             get;
             set;
@@ -870,7 +870,7 @@ namespace Ionic.Zip
                 }
                 else
                 {
-                    _alternateEncoding = Ionic.Zip.ZipOutputStream.DefaultEncoding;
+                    _alternateEncoding = Pathfinding.Ionic.Zip.ZipOutputStream.DefaultEncoding;
                     _alternateEncodingUsage = ZipOption.Never;
                 }
             }
@@ -1632,12 +1632,12 @@ namespace Ionic.Zip
         private CountingStream _outputCounter;
         private Stream _encryptor;
         private Stream _deflater;
-        private Ionic.Crc.CrcCalculatorStream _entryOutputStream;
+        private Pathfinding.Ionic.Crc.CrcCalculatorStream _entryOutputStream;
         private bool _needToWriteEntryHeader;
         private string _name;
         private bool _DontIgnoreCase;
 #if !NETCF
-        internal Ionic.Zlib.ParallelDeflateOutputStream ParallelDeflater;
+        internal Pathfinding.Ionic.Zlib.ParallelDeflateOutputStream ParallelDeflater;
         private long _ParallelDeflateThreshold;
         private int _maxBufferPairs = 16;
 #endif
@@ -1723,7 +1723,7 @@ namespace Ionic.Zip
         }
 
 #if !NETCF
-        public Ionic.Zlib.ParallelDeflateOutputStream ParallelDeflater
+        public Pathfinding.Ionic.Zlib.ParallelDeflateOutputStream ParallelDeflater
         {
             get
             {
@@ -1766,7 +1766,7 @@ namespace Ionic.Zip
             }
         }
 
-        public Ionic.Zlib.CompressionStrategy Strategy
+        public Pathfinding.Ionic.Zlib.CompressionStrategy Strategy
         {
             get
             {

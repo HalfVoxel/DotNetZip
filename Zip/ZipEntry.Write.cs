@@ -30,7 +30,7 @@ using System;
 using System.IO;
 using RE = System.Text.RegularExpressions;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     public partial class ZipEntry
@@ -84,7 +84,7 @@ namespace Ionic.Zip
 
             Int16 versionNeededToExtract = (Int16)(_OutputUsesZip64.Value ? (short)45 : vNeeded);
 #if BZIP
-            if (this.CompressionMethod == Ionic.Zip.CompressionMethod.BZip2)
+            if (this.CompressionMethod == Pathfinding.Ionic.Zip.CompressionMethod.BZip2)
                 versionNeededToExtract = 46;
 #endif
 
@@ -683,7 +683,7 @@ namespace Ionic.Zip
         {
             if (_UncompressedSize < 0x10) return false;
             if (_CompressionMethod == 0x00) return false;
-            if (CompressionLevel == Ionic.Zlib.CompressionLevel.None) return false;
+            if (CompressionLevel == Pathfinding.Ionic.Zlib.CompressionLevel.None) return false;
             if (_CompressedSize < _UncompressedSize) return false;
 
             if (this._Source == ZipEntrySource.Stream && !this._sourceStream.CanSeek) return false;
@@ -755,7 +755,7 @@ namespace Ionic.Zip
 
             // finally, set CompressionMethod to None if CompressionLevel is None
             if (CompressionLevel == (short)Ionic.Zlib.CompressionLevel.None &&
-                CompressionMethod == Ionic.Zip.CompressionMethod.Deflate)
+                CompressionMethod == Pathfinding.Ionic.Zip.CompressionMethod.Deflate)
                 _CompressionMethod = 0x00;
 
             return;
@@ -885,7 +885,7 @@ namespace Ionic.Zip
                              (_container.Zip64 == Zip64Option.AsNecessary && !s.CanSeek));
             Int16 VersionNeededToExtract = (Int16)(_presumeZip64 ? 45 : 20);
 #if BZIP
-            if (this.CompressionMethod == Ionic.Zip.CompressionMethod.BZip2)
+            if (this.CompressionMethod == Pathfinding.Ionic.Zip.CompressionMethod.BZip2)
                 VersionNeededToExtract = 46;
 #endif
 
@@ -1043,7 +1043,7 @@ namespace Ionic.Zip
 #endif
 
             // LastMod
-            _TimeBlob = Ionic.Zip.SharedUtilities.DateTimeToPacked(LastModified);
+            _TimeBlob = Pathfinding.Ionic.Zip.SharedUtilities.DateTimeToPacked(LastModified);
 
             // (i==10) time blob
             block[i++] = (byte)(_TimeBlob & 0x000000FF);
@@ -1164,7 +1164,7 @@ namespace Ionic.Zip
                 // get the original stream:
                 if (this._Source == ZipEntrySource.WriteDelegate)
                 {
-                    var output = new Ionic.Crc.CrcCalculatorStream(Stream.Null);
+                    var output = new Pathfinding.Ionic.Crc.CrcCalculatorStream(Stream.Null);
                     // allow the application to write the data
                     this._WriteDelegate(this.FileName, output);
                     _Crc32 = output.Crc;
@@ -1197,7 +1197,7 @@ namespace Ionic.Zip
                         input = File.Open(LocalFileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                     }
 
-                    var crc32 = new Ionic.Crc.CRC32();
+                    var crc32 = new Pathfinding.Ionic.Crc.CRC32();
                     _Crc32 = crc32.GetCrc32(input);
 
                     if (_sourceStream == null)
@@ -1385,7 +1385,7 @@ namespace Ionic.Zip
 
                 // Wrap a CrcCalculatorStream around that.
                 // This will happen BEFORE compression (if any) as we write data out.
-                var output = new Ionic.Crc.CrcCalculatorStream(compressor, true);
+                var output = new Pathfinding.Ionic.Crc.CrcCalculatorStream(compressor, true);
 
                 // output.Write() causes this flow:
                 // calc-crc -> compress -> encrypt -> count -> actually write
@@ -1497,26 +1497,26 @@ namespace Ionic.Zip
                                          CountingStream entryCounter,
                                          Stream encryptor,
                                          Stream compressor,
-                                         Ionic.Crc.CrcCalculatorStream output)
+                                         Pathfinding.Ionic.Crc.CrcCalculatorStream output)
         {
             if (output == null) return;
 
             output.Close();
 
             // by calling Close() on the deflate stream, we write the footer bytes, as necessary.
-            if ((compressor as Ionic.Zlib.DeflateStream) != null)
+            if ((compressor as Pathfinding.Ionic.Zlib.DeflateStream) != null)
                 compressor.Close();
 #if BZIP
-            else if ((compressor as Ionic.BZip2.BZip2OutputStream) != null)
+            else if ((compressor as Pathfinding.Ionic.BZip2.BZip2OutputStream) != null)
                 compressor.Close();
 #if !NETCF
-            else if ((compressor as Ionic.BZip2.ParallelBZip2OutputStream) != null)
+            else if ((compressor as Pathfinding.Ionic.BZip2.ParallelBZip2OutputStream) != null)
                 compressor.Close();
 #endif
 #endif
 
 #if !NETCF
-            else if ((compressor as Ionic.Zlib.ParallelDeflateOutputStream) != null)
+            else if ((compressor as Pathfinding.Ionic.Zlib.ParallelDeflateOutputStream) != null)
                 compressor.Close();
 #endif
 
@@ -1580,7 +1580,7 @@ namespace Ionic.Zip
                         s.Seek(-1 * headerBytesToRetract, SeekOrigin.Current);
                         s.SetLength(s.Position);
                         // workitem 10178
-                        Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(s);
+                        Pathfinding.Ionic.Zip.SharedUtilities.Workaround_Ladybug318918(s);
 
                         // workitem 11131
                         // adjust the count on the CountingStream as necessary
@@ -1895,7 +1895,7 @@ namespace Ionic.Zip
                                        out CountingStream outputCounter,
                                        out Stream encryptor,
                                        out Stream compressor,
-                                       out Ionic.Crc.CrcCalculatorStream output)
+                                       out Pathfinding.Ionic.Crc.CrcCalculatorStream output)
         {
             TraceWriteLine("PrepOutputStream: e({0}) comp({1}) crypto({2}) zf({3})",
                            FileName,
@@ -1929,14 +1929,14 @@ namespace Ionic.Zip
             }
             // Wrap a CrcCalculatorStream around that.
             // This will happen BEFORE compression (if any) as we write data out.
-            output = new Ionic.Crc.CrcCalculatorStream(compressor, true);
+            output = new Pathfinding.Ionic.Crc.CrcCalculatorStream(compressor, true);
         }
 
 
 
         private Stream MaybeApplyCompression(Stream s, long streamLength)
         {
-            if (_CompressionMethod == 0x08 && CompressionLevel != Ionic.Zlib.CompressionLevel.None)
+            if (_CompressionMethod == 0x08 && CompressionLevel != Pathfinding.Ionic.Zlib.CompressionLevel.None)
             {
 #if !NETCF
                 // ParallelDeflateThreshold == 0    means ALWAYS use parallel deflate
@@ -1968,7 +1968,7 @@ namespace Ionic.Zip
                     if (_container.ParallelDeflater == null)
                     {
                         _container.ParallelDeflater =
-                            new Ionic.Zlib.ParallelDeflateOutputStream(s,
+                            new Pathfinding.Ionic.Zlib.ParallelDeflateOutputStream(s,
                                                                        CompressionLevel,
                                                                        _container.Strategy,
                                                                        true);
@@ -1980,12 +1980,12 @@ namespace Ionic.Zip
                                 _container.ParallelDeflateMaxBufferPairs;
                     }
                     // reset it with the new stream
-                    Ionic.Zlib.ParallelDeflateOutputStream o1 = _container.ParallelDeflater;
+                    Pathfinding.Ionic.Zlib.ParallelDeflateOutputStream o1 = _container.ParallelDeflater;
                     o1.Reset(s);
                     return o1;
                 }
 #endif
-                var o = new Ionic.Zlib.DeflateStream(s, Ionic.Zlib.CompressionMode.Compress,
+                var o = new Pathfinding.Ionic.Zlib.DeflateStream(s, Pathfinding.Ionic.Zlib.CompressionMode.Compress,
                                                      CompressionLevel,
                                                      true);
                 if (_container.CodecBufferSize > 0)
@@ -2004,11 +2004,11 @@ namespace Ionic.Zip
                      _container.ParallelDeflateThreshold > 0L))
                 {
 
-                    var o1 = new Ionic.BZip2.ParallelBZip2OutputStream(s, true);
+                    var o1 = new Pathfinding.Ionic.BZip2.ParallelBZip2OutputStream(s, true);
                     return o1;
                 }
 #endif
-                var o = new Ionic.BZip2.BZip2OutputStream(s, true);
+                var o = new Pathfinding.Ionic.BZip2.BZip2OutputStream(s, true);
                 return o;
             }
 #endif
@@ -2316,7 +2316,7 @@ namespace Ionic.Zip
                     // http://www.info-zip.org/pub/infozip/
 
                     // Also, winzip insists on this!
-                    _TimeBlob = Ionic.Zip.SharedUtilities.DateTimeToPacked(LastModified);
+                    _TimeBlob = Pathfinding.Ionic.Zip.SharedUtilities.DateTimeToPacked(LastModified);
                     encryptionHeader[11] = (byte)((this._TimeBlob >> 8) & 0xff);
                 }
                 else

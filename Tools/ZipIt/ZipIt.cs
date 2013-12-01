@@ -19,9 +19,9 @@
 
 using System;
 using System.IO;
-using Ionic.Zip;
+using Pathfinding.Ionic.Zip;
 
-namespace Ionic.Zip.Examples
+namespace Pathfinding.Ionic.Zip.Examples
 {
     public class ZipIt
     {
@@ -29,7 +29,7 @@ namespace Ionic.Zip.Examples
         {
             string UsageMessage =
             "Zipit.exe:  zip up a directory, file, or a set of them, into a zipfile.\n" +
-            "            Depends on Ionic's DotNetZip library. This is version {0} of the utility.\n" +
+            "            Depends on Pathfinding.Ionic's DotNetZip library. This is version {0} of the utility.\n" +
             "usage:\n   ZipIt.exe <ZipFileToCreate> [arguments]\n" +
             "\narguments: \n" +
             "  <directory> | <file>  - a directory or file to add to the archive.\n" +

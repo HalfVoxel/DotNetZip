@@ -1,86 +1,81 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Zip/ZipEntry.Read.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../Library/Frameworks/Mono.framework/Versions/3.2.3/lib/mono/4.0/Microsoft.Common.targets">
     <Files>
-      <File FileName="Zip/ZipSegmentedStream.cs" Line="571" Column="7" />
-      <File FileName="Zip/ZipInputStream.cs" Line="40" Column="1" />
-      <File FileName="Zip/ZipOutputStream.cs" Line="53" Column="1" />
-      <File FileName="Zip/ZipFile.x-IEnumerable.cs" Line="40" Column="1" />
-      <File FileName="Zip/ZipFile.Selector.cs" Line="41" Column="1" />
-      <File FileName="Zip/ZipFile.SaveSelfExtractor.cs" Line="1100" Column="7" />
-      <File FileName="Zip/ZipFile.Save.cs" Line="34" Column="1" />
-      <File FileName="Zip/ZipFile.Read.cs" Line="34" Column="1" />
-      <File FileName="Zip/ZipFile.Extract.cs" Line="34" Column="1" />
-      <File FileName="Zip/ZipFile.cs" Line="49" Column="1" />
-      <File FileName="Zip/ZipFile.Check.cs" Line="36" Column="1" />
-      <File FileName="Zip/ZipFile.AddUpdate.cs" Line="35" Column="1" />
+      <File FileName="Zip/ZipSegmentedStream.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipInputStream.cs" Line="818" Column="11" />
+      <File FileName="Zip/ZipOutputStream.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipFile.x-IEnumerable.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipFile.Selector.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipFile.SaveSelfExtractor.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipFile.Save.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipFile.Read.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipFile.Extract.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipFile.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipFile.Check.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipFile.AddUpdate.cs" Line="1" Column="1" />
       <File FileName="Zip/ZipErrorAction.cs" Line="1" Column="1" />
       <File FileName="Zip/ZipEntrySource.cs" Line="1" Column="1" />
-      <File FileName="Zip/ZipEntry.Write.cs" Line="35" Column="1" />
-      <File FileName="Zip/ZipEntry.Read.cs" Line="720" Column="17" />
-      <File FileName="Zip/ZipEntry.Extract.cs" Line="32" Column="1" />
-      <File FileName="Zip/ZipEntry.cs" Line="35" Column="1" />
-      <File FileName="Zip/ZipDirEntry.cs" Line="35" Column="1" />
-      <File FileName="Zip/ZipCrypto.cs" Line="32" Column="1" />
+      <File FileName="Zip/ZipEntry.Write.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipEntry.Read.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipEntry.Extract.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipEntry.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipDirEntry.cs" Line="1" Column="1" />
+      <File FileName="Zip/ZipCrypto.cs" Line="1" Column="1" />
       <File FileName="Zip/ZipConstants.cs" Line="1" Column="1" />
-      <File FileName="Zip/WinZipAes.cs" Line="40" Column="2" />
-      <File FileName="BZip2/ParallelBZip2OutputStream.cs" Line="999" Column="7" />
-      <File FileName="Zip/FileSelector.cs" Line="58" Column="13" />
+      <File FileName="Zip/WinZipAes.cs" Line="1" Column="1" />
+      <File FileName="BZip2/ParallelBZip2OutputStream.cs" Line="138" Column="5" />
+      <File FileName="Zip/FileSelector.cs" Line="1" Column="1" />
       <File FileName="Examples/C#/ZipTreeView/Program.cs" Line="1" Column="1" />
       <File FileName="Examples/VB/WinForms-TreeViewZip/WinForms-TreeViewZip/Form1.vb" Line="1" Column="1" />
-      <File FileName="CommonSrc/CRC32.cs" Line="34" Column="16" />
+      <File FileName="CommonSrc/CRC32.cs" Line="1" Column="1" />
       <File FileName="Tools/WinFormsApp/ZipForm.cs" Line="1" Column="1" />
       <File FileName="Tools/WinFormsApp/Form.State.cs" Line="1" Column="1" />
-      <File FileName="Zip/Events.cs" Line="32" Column="1" />
-      <File FileName="Zip/ComHelper.cs" Line="31" Column="1" />
+      <File FileName="Zip/Events.cs" Line="1" Column="1" />
+      <File FileName="Zip/ComHelper.cs" Line="31" Column="5" />
       <File FileName="Zip/Resources/PasswordDialog.cs" Line="1" Column="1" />
-      <File FileName="Zlib/DeflateStream.cs" Line="739" Column="7" />
-      <File FileName="Zlib/GZipStream.cs" Line="1034" Column="7" />
+      <File FileName="Zlib/DeflateStream.cs" Line="1" Column="1" />
+      <File FileName="Zlib/GZipStream.cs" Line="35" Column="5" />
       <File FileName="Zlib/Inflate.cs" Line="1" Column="1" />
       <File FileName="Zlib/InfTree.cs" Line="1" Column="1" />
-      <File FileName="Zlib/ParallelDeflateOutputStream.cs" Line="1384" Column="7" />
+      <File FileName="Zlib/ParallelDeflateOutputStream.cs" Line="30" Column="25" />
       <File FileName="Zlib/Tree.cs" Line="1" Column="1" />
       <File FileName="Zlib/Zlib.cs" Line="1" Column="1" />
-      <File FileName="Zlib/ZlibBaseStream.cs" Line="626" Column="7" />
+      <File FileName="Zlib/ZlibBaseStream.cs" Line="1" Column="1" />
       <File FileName="Zlib/ZlibCodec.cs" Line="1" Column="1" />
       <File FileName="Zlib/ZlibConstants.cs" Line="1" Column="1" />
-      <File FileName="Zlib/ZlibStream.cs" Line="724" Column="7" />
+      <File FileName="Zlib/ZlibStream.cs" Line="1" Column="1" />
       <File FileName="Zip Reduced/Properties/AssemblyInfo.cs" Line="1" Column="1" />
       <File FileName="SolutionInfo.cs" Line="1" Column="1" />
       <File FileName="Zip CF/Properties/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="Zip/ZipFile.Events.cs" Line="32" Column="1" />
+      <File FileName="Zip/ZipFile.Events.cs" Line="1" Column="1" />
       <File FileName="Zip/EncryptionAlgorithm.cs" Line="1" Column="1" />
-      <File FileName="Zip/Shared.cs" Line="904" Column="7" />
+      <File FileName="Zip/Shared.cs" Line="1" Column="1" />
       <File FileName="Zip/OffsetStream.cs" Line="1" Column="1" />
       <File FileName="Zip/ExtractExistingFileAction.cs" Line="1" Column="1" />
-      <File FileName="Zip/Exceptions.cs" Line="1" Column="1" />
+      <File FileName="Zip/Exceptions.cs" Line="36" Column="5" />
       <File FileName="Zip/Resources/CommandLineSelfExtractorStub.cs" Line="1" Column="1" />
-      <File FileName="BZip2/BZip2InputStream.cs" Line="1446" Column="7" />
+      <File FileName="BZip2/BZip2InputStream.cs" Line="1" Column="1" />
       <File FileName="BZip2/BZip2Compressor.cs" Line="1" Column="1" />
-      <File FileName="BZip2/BZip2OutputStream.cs" Line="530" Column="7" />
+      <File FileName="BZip2/BZip2OutputStream.cs" Line="1" Column="1" />
+      <File FileName="Zlib CF/Zlib CF DLL.csproj" Line="1" Column="1" />
+      <File FileName="Zip CF/Zip CF DLL.csproj" Line="1" Column="1" />
+      <File FileName="Tools/BZip2/BZip2.cs" Line="102" Column="19" />
+      <File FileName="../../../../../Library/Frameworks/Mono.framework/Versions/3.2.3/lib/mono/4.0/Microsoft.Common.targets" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Compact Framework" expanded="True">
-            <Node name="Zip CF DLL" expanded="True">
-              <Node name="Properties" expanded="True" />
-            </Node>
-          </Node>
-          <Node name="Examples" expanded="True">
-            <Node name="WinForms-TreeViewZip" expanded="True" />
-            <Node name="ZipTreeView" expanded="True" />
-          </Node>
           <Node name="Tools" expanded="True">
-            <Node name="Win Forms App" expanded="True" />
+            <Node name="BZip2" expanded="True" />
           </Node>
           <Node name="BZip2 DLL" expanded="True" />
-          <Node name="Zip DLL" expanded="True">
-            <Node name="Resources" expanded="True" />
-          </Node>
-          <Node name="Zip Reduced" expanded="True" selected="True">
+          <Node name="Zip DLL" expanded="True" selected="True">
             <Node name="BZip2" expanded="True" />
-            <Node name="Properties" expanded="True" />
+            <Node name="Zlib" expanded="True" />
+          </Node>
+          <Node name="Zip Reduced" expanded="True">
+            <Node name="Zip" expanded="True" />
           </Node>
           <Node name="Zlib DLL" expanded="True" />
         </State>

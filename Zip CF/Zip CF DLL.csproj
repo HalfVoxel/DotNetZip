@@ -16,7 +16,7 @@
     <DeployDirSuffix>Ionic.Zip.CF</DeployDirSuffix>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <NativePlatformName>Windows Mobile 6 Standard SDK</NativePlatformName>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>..\Ionic.snk</AssemblyOriginatorKeyFile>
     <FormFactorID>
     </FormFactorID>
@@ -76,15 +76,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Zip\*.cs"
-             Exclude="..\Zip\ZipFile.SaveSelfExtractor.cs;..\Zip\FileSelector.cs;..\Zip\ZipFile.Selector.cs;" />
-    <Compile Include="..\BZip2\*.cs"
-             Exclude="..\BZip2\ParallelBZip2OutputStream.cs">
-      <Link>BZip2\%(FileName)</Link>
+    <Compile Include="..\Zip\*.cs" Exclude="..\Zip\ZipFile.SaveSelfExtractor.cs;..\Zip\FileSelector.cs;..\Zip\ZipFile.Selector.cs;" />
+    <Compile Include="..\BZip2\*.cs" Exclude="..\BZip2\ParallelBZip2OutputStream.cs">
+      <Link>BZip2\%25%28FileName%29</Link>
     </Compile>
-    <Compile Include="..\Zlib\*.cs"
-             Exclude="..\Zlib\ParallelDeflateOutputStream.cs" >
-      <Link>Zlib\%(FileName)</Link>
+    <Compile Include="..\Zlib\*.cs" Exclude="..\Zlib\ParallelDeflateOutputStream.cs">
+      <Link>Zlib\%25%28FileName%29</Link>
     </Compile>
     <Compile Include="..\CommonSrc\CRC32.cs">
       <Link>CRC32.cs</Link>

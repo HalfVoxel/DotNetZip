@@ -14,7 +14,7 @@
 // private void button1_Click(object sender, EventArgs e)
 // {
 //     _folderName = (System.IO.Directory.Exists(_folderName)) ? _folderName : "";
-//     var dlg1 = new Ionic.Utils.FolderBrowserDialogEx
+//     var dlg1 = new Pathfinding.Ionic.Utils.FolderBrowserDialogEx
 //     {
 //         Description = "Select a folder for the extracted files:",
 //         ShowNewFolderButton = true,
@@ -37,7 +37,7 @@
 //
 
 
-namespace Ionic.Utils
+namespace Pathfinding.Ionic.Utils
 {
 using System;
 using System.Windows.Forms;

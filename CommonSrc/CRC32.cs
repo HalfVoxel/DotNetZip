@@ -29,7 +29,7 @@
 using System;
 using Interop = System.Runtime.InteropServices;
 
-namespace Ionic.Crc
+namespace Pathfinding.Ionic.Crc
 {
 #if STRIPLEVEL6
     /// <summary>

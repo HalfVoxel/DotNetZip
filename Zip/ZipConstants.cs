@@ -25,7 +25,7 @@
 
 using System;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
   static class ZipConstants
   {      

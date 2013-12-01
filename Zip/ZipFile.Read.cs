@@ -29,7 +29,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Ionic.Zip
+namespace Pathfinding.Ionic.Zip
 {
 #if STRIPLEVEL1
     /// <summary>
@@ -833,7 +833,7 @@ namespace Ionic.Zip
         private static void ReadCentralDirectoryFooter(ZipFile zf)
         {
             Stream s = zf.ReadStream;
-            int signature = Ionic.Zip.SharedUtilities.ReadSignature(s);
+            int signature = Pathfinding.Ionic.Zip.SharedUtilities.ReadSignature(s);
 
             byte[] block = null;
             int j = 0;
@@ -876,7 +876,7 @@ namespace Ionic.Zip
                 s.Read(block, 0, block.Length);
                 // discard the result
 
-                signature = Ionic.Zip.SharedUtilities.ReadSignature(s);
+                signature = Pathfinding.Ionic.Zip.SharedUtilities.ReadSignature(s);
                 if (signature != ZipConstants.Zip64EndOfCentralDirectoryLocatorSignature)
                     throw new ZipException("Inconsistent metadata in the ZIP64 Central Directory.");
 
@@ -884,7 +884,7 @@ namespace Ionic.Zip
                 s.Read(block, 0, block.Length);
                 // discard the result
 
-                signature = Ionic.Zip.SharedUtilities.ReadSignature(s);
+                signature = Pathfinding.Ionic.Zip.SharedUtilities.ReadSignature(s);
             }
 
             // Throw if this is not a signature for "end of central directory record"

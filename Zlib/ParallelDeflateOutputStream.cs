@@ -27,11 +27,11 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using Ionic.Zlib;
+using Pathfinding.Ionic.Zlib;
 using System.IO;
 
 
-namespace Ionic.Zlib
+namespace Pathfinding.Ionic.Zlib
 {
 #if STRIPLEVEL6
     internal class WorkItem
@@ -46,7 +46,7 @@ namespace Ionic.Zlib
         public ZlibCodec compressor;
 
         public WorkItem(int size,
-                        Ionic.Zlib.CompressionLevel compressLevel,
+                        Pathfinding.Ionic.Zlib.CompressionLevel compressLevel,
                         CompressionStrategy strategy,
                         int ix)
         {
@@ -122,12 +122,12 @@ namespace Ionic.Zlib
         private int                         _lastWritten;
         private int                         _latestCompressed;
         private int                         _Crc32;
-        private Ionic.Crc.CRC32             _runningCrc;
+        private Pathfinding.Ionic.Crc.CRC32             _runningCrc;
         private object                      _latestLock = new object();
         private System.Collections.Generic.Queue<int>     _toWrite;
         private System.Collections.Generic.Queue<int>     _toFill;
         private Int64                       _totalBytesProcessed;
-        private Ionic.Zlib.CompressionLevel _compressLevel;
+        private Pathfinding.Ionic.Zlib.CompressionLevel _compressLevel;
         private volatile Exception          _pendingException;
         private bool                        _handlingException;
         private object                      _eLock = new Object();  // protects _pendingException
@@ -489,7 +489,7 @@ namespace Ionic.Zlib
             }
 
             _newlyCompressedBlob = new AutoResetEvent(false);
-            _runningCrc = new Ionic.Crc.CRC32();
+            _runningCrc = new Pathfinding.Ionic.Crc.CRC32();
             _currentlyFilling = -1;
             _lastFilled = -1;
             _lastWritten = -1;
@@ -857,7 +857,7 @@ namespace Ionic.Zlib
 
             _firstWriteDone = false;
             _totalBytesProcessed = 0L;
-            _runningCrc = new Ionic.Crc.CRC32();
+            _runningCrc = new Pathfinding.Ionic.Crc.CRC32();
             _isClosed= false;
             _currentlyFilling = -1;
             _lastFilled = -1;
@@ -997,7 +997,7 @@ namespace Ionic.Zlib
 
                     // repeatedly write buffers as they become ready
                     WorkItem workitem = null;
-                    Ionic.Zlib.CRC32 c= new Ionic.Zlib.CRC32();
+                    Pathfinding.Ionic.Zlib.CRC32 c= new Pathfinding.Ionic.Zlib.CRC32();
                     do
                     {
                         workitem = _pool[_nextToWrite % _pc];
@@ -1156,7 +1156,7 @@ namespace Ionic.Zlib
             try
             {
                 int myItem = workitem.index;
-                Ionic.Crc.CRC32 crc = new Ionic.Crc.CRC32();
+                Pathfinding.Ionic.Crc.CRC32 crc = new Pathfinding.Ionic.Crc.CRC32();
 
                 // calc CRC on the buffer
                 crc.SlurpBlock(workitem.buffer, 0, workitem.inputBytesAvailable);
