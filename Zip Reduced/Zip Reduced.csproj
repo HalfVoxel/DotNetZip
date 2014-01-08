@@ -8,8 +8,8 @@
     <ProjectGuid>{49A128D3-C3F2-46B1-8F7A-EECD209EA860}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Zip_Reduced</RootNamespace>
-    <AssemblyName>Ionic.Zip.Reduced</AssemblyName>
+    <RootNamespace>Pathfinding.Ionic.Zip</RootNamespace>
+    <AssemblyName>Pathfinding.Ionic.Zip.Reduced</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -56,6 +56,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DebugType>none</DebugType>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
